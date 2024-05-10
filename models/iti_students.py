@@ -13,3 +13,5 @@ class ItiStudents(models.Model):
         [('m', 'Male'), ('f', 'Female')]
     )
     accepted = fields.Boolean()
+    cv = fields.Html()
+    track_id = fields.Many2one("iti.tracks")

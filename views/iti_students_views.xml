@@ -1,5 +1,49 @@
 <odoo>
     <data>
+
+        <record id="students_tree_view" model="ir.ui.view">
+            <field name="name">Students Tree View</field>
+            <field name="model">iti.students</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="address"/>
+                    <field name="salary"/>
+                    <field name="track_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="students_form_view" model="ir.ui.view">
+            <field name="name">Students Form View</field>
+            <field name="model">iti.students</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <group string="Basic Info">
+                                <field name="name"/>
+                                <field name="birth_date"/>
+                                <field name="address"/>
+                                <field name="gender"/>
+                            </group>
+                            <group string="Additional Info">
+                                <field name="accepted"/>
+                                <field name="salary"/>
+                                <field name="image"/>
+                                <field name="track_id"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="CV">
+                                <field name="cv"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
         <record id="students_action" model="ir.actions.act_window">
             <field name="name">Students</field>
             <field name="res_model">iti.students</field>

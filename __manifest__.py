@@ -3,6 +3,7 @@
     "author": "Tarek Ashry",
     "description": "Oddo module for managing students and courses in iti",
     "data": [
-        "views/iti_students_views.xml"
+        "views/iti_students_views.xml",
+        "views/iti_tracks_views.xml"
     ]
 }
