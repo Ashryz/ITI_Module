@@ -23,15 +23,20 @@
                         <group>
                             <group string="Basic Info">
                                 <field name="name"/>
-                                <field name="birth_date"/>
+                                <field name="birth_date"
+                                       attrs="{'invisible':[('gender','=','f')]}"
+                                />
                                 <field name="address"/>
                                 <field name="gender"/>
                             </group>
                             <group string="Additional Info">
                                 <field name="accepted"/>
                                 <field name="salary"/>
-                                <field name="image"/>
-                                <field name="track_id"/>
+                                <field name="image" widget="image" style="max-width:100px"/>
+                                <field name="track_id" domain="[('is_opened','=',True)]"/>
+                                <field name="track_capacity"/>
+                                <field name="skills_ids"
+                                       widget="many2many_tags"/>
                             </group>
                         </group>
                         <notebook>
