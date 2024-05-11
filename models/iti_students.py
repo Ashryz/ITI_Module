@@ -15,3 +15,6 @@ class ItiStudents(models.Model):
     accepted = fields.Boolean()
     cv = fields.Html()
     track_id = fields.Many2one("iti.tracks")
+    track_capacity = fields.Integer(related="track_id.capacity")
+    skills_ids = fields.Many2many("iti.skills")
+
