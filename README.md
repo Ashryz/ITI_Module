@@ -3,6 +3,9 @@ Odoo module for managing students and courses using-odoo16
 
 ### Models
 - create students model
+  * make relations between models
+  * using onChange, create, write, unlink
+  * using api constrains, computed fields
 - create tracks model 
 
 ### Views
@@ -10,5 +13,4 @@ Odoo module for managing students and courses using-odoo16
 - create students form view
 - create tracks tree view 
 - create tracks form view
-- make relations between models
 - using fields attributes (attrs, domain)

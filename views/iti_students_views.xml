@@ -7,8 +7,11 @@
             <field name="arch" type="xml">
                 <tree>
                     <field name="name"/>
+                    <field name="email"/>
                     <field name="address"/>
                     <field name="salary"/>
+                    <field name="tax"/>
+                    <field name="net_salary"/>
                     <field name="track_id"/>
                 </tree>
             </field>
@@ -19,10 +22,21 @@
             <field name="model">iti.students</field>
             <field name="arch" type="xml">
                 <form>
+                    <header>
+                        <button string="Set First Interview" type="object" name="change_state"
+                        attrs="{'invisible':[('state', '!=', 'applied')]}"/>
+
+                        <button string="Set Second Interview" type="object"  states="first" name="change_state"/>
+                        <button string="Passed" type="object" states="second" name="set_passed"/>
+                        <button string="Rejected" type="object" states="second" name="set_rejected"/>
+                        <button string="Back to Applied" type="object" states="passed,rejected" name="change_state"/>
+                        <field name="state" widget="statusbar"/>
+                    </header>
                     <sheet>
                         <group>
                             <group string="Basic Info">
                                 <field name="name"/>
+                                <field name="email"/>
                                 <field name="birth_date"
                                        attrs="{'invisible':[('gender','=','f')]}"
                                 />
@@ -30,8 +44,11 @@
                                 <field name="gender"/>
                             </group>
                             <group string="Additional Info">
+                                <field name="state"/>
                                 <field name="accepted"/>
-                                <field name="salary"/>
+                                <field name="salary" />
+                                <field name="tax"/>
+                                <field name="net_salary"/>
                                 <field name="image" widget="image" style="max-width:100px"/>
                                 <field name="track_id" domain="[('is_opened','=',True)]"/>
                                 <field name="track_capacity"/>
