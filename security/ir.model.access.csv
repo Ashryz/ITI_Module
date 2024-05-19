@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_students,access_students,model_iti_students,iti_module.iti_normal_group,1,1,0,0
+access_tracks,access_tracks,model_iti_tracks,iti_module.iti_normal_group,1,1,0,0
+access_skills,access_skills,model_iti_skills,iti_module.iti_normal_group,1,1,0,0
