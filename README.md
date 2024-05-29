@@ -17,3 +17,4 @@ Odoo module for managing students and courses using-odoo16
 - using fields attributes (attrs, domain)
 - create menuitem Hr 
 - inherit hr tree view and its form view adding field military certificate
+- create kanban view to students
